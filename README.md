@@ -15,7 +15,7 @@ SharpWitness is my attempt at cobbling together a C# version of [EyeWitness](htt
 
 ```
 > type C:\Users\Rasta\Desktop\urls.txt
-https://www.bbc.co.uk/news/science_and_environment
+https://www.bbc.co.uk
 
 > SharpWitness.exe -t C:\Users\Rasta\Desktop\urls.txt -o C:\Users\Rasta\Desktop\report.html
 ```
