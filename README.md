@@ -1,6 +1,6 @@
 # SharpWitness
 
-SharpWitness is my attempt at cobbling together a C# version of (EyeWitness)[https://github.com/FortyNorthSecurity/EyeWitness] by Christopher Truncer.  It still barely functions right now, hopefully will become a lot more useful in the future, once I put some dev time into it.
+SharpWitness is my attempt at cobbling together a C# version of [EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness) by Christopher Truncer.  It still barely functions right now, hopefully will become a lot more useful in the future, once I put some dev time into it.
 
 ## Usage
 
@@ -19,5 +19,3 @@ https://www.bbc.co.uk/news/science_and_environment
 
 > SharpWitness.exe -t C:\Users\Rasta\Desktop\urls.txt -o C:\Users\Rasta\Desktop\report.html
 ```
-
-{{< figure src="sharpwitness.png" >}}
