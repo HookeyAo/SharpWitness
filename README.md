@@ -19,6 +19,6 @@ https://www.bbc.co.uk/news/science_and_environment
 
 > SharpWitness.exe -t C:\Users\Rasta\Desktop\urls.txt -o C:\Users\Rasta\Desktop\report.html
 ```
-### Report
+## Report
 
 ![](https://raw.githubusercontent.com/rasta-mouse/SharpWitness/master/SharpWitness.png)
