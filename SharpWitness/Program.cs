@@ -2,6 +2,7 @@
 using CommandLine;
 using System.Drawing;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace SharpWitness
 {
@@ -44,11 +45,25 @@ namespace SharpWitness
 
                         html = title + address;
 
-                        if (hashtable.ContainsKey(htmlTitle.ToLower()))
+                        foreach (DictionaryEntry item in hashtable)
                         {
-                            string creds = HTML.GetDefaultCreds(hashtable[htmlTitle.ToLower()].ToString());
-                            html += creds;
+                            if (htmlTitle.ToLower().Contains(item.Key.ToString()))
+                            {
+                                string creds = HTML.GetDefaultCreds(hashtable[item.Key].ToString());
+                                html += creds;
+                            }
                         }
+
+                        //string test = "phpmyadmin";
+                        //string test2 = "phpMyAdmin 2.11.11.3 - 27.0.34.156";
+
+                        //Console.WriteLine(test2.ToLower().Contains(test));
+
+                        //if (hashtable.Contains(htmlTitle.ToLower()))
+                        //{
+                        //    string creds = HTML.GetDefaultCreds(hashtable[htmlTitle.ToLower()].ToString());
+                        //    html += creds;
+                        //}
 
                         string b64image = HTML.GetImg(b64);
                         html += b64image;

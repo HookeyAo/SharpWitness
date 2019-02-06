@@ -7,8 +7,8 @@
             return @"
 <html>
 <body>
-<h1>SharpWitness</h2>
-<br /><br />
+<h1><u>SharpWitness</u></h2>
+<br />
 ";
         }
 
