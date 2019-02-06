@@ -1,16 +1,18 @@
-﻿using System;
-using System.Net;
-using System.Net.Security;
+﻿using System.Net;
 using System.Text.RegularExpressions;
 
 namespace SharpWitness
 {
     public class HTTP
     {
-        public static string GetContent(string url)
+
+    public static string MakeRequest(string url, string agent)
         {
-            WebClient client = new WebClient();
             ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+
+            WebClient client = new WebClient();
+            client.Headers.Add("User-Agent", agent);
+
             return client.DownloadString(url);
         }
 
