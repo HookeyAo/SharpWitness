@@ -23,13 +23,21 @@ namespace SharpWitness
                 {
                 string[] urls = File.Read(o.Targets);
 
+                    string htmlHeader = HTML.GetHeader();
+                    File.Write(o.Outfile, htmlHeader);
+
                 foreach (string url in urls)
                 {
+                        string htmlContent = HTTP.GetContent(url);
+                        string htmlTitle = HTTP.GetTitle(htmlContent);
                         Image image = Screenshot.Capture(url);
                         string b64 = Convert.ToBase64String(ImageConverter.ToByteArray(image));
-                        string html = HTML.Generate(url, b64);
+                        string html = HTML.Generate(url, htmlTitle, b64);
                         File.Write(o.Outfile, html);
                 }
+
+                    string htmlFooter = HTML.GetFooter();
+                    File.Write(o.Outfile, htmlFooter);
 
                 });
         }

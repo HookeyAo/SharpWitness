@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="File.cs" />
     <Compile Include="HTML.cs" />
+    <Compile Include="HTTP.cs" />
     <Compile Include="ImageConverter.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Program.cs" />

@@ -1,28 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SharpWitness
+﻿namespace SharpWitness
 {
     public class HTML
     {
-        public static string Generate(string url, string b64img)
+        public static string GetHeader()
         {
-            string html = @"
+            return @"
 <html>
 <body>
-<h1>URL</h1>
+<h1>SharpWitness</h2>
+<br /><br />
+";
+        }
+
+        public static string Generate(string url, string title, string b64img)
+        {
+            string html = @"
+<b>Title:</b> TITLE <br />
+<b>Address:</b> URL <br />
 <img src='data: image / png; base64,B64IMG' />
-</body>
-</html>
+<br /><br />
 ";
 
             html = html.Replace("URL", url);
+            html = html.Replace("TITLE", title);
             html = html.Replace("B64IMG", b64img);
 
             return html;
 
+        }
+
+        public static string GetFooter()
+        {
+            return @"
+</body>
+</html>
+";
         }
     }
 }
