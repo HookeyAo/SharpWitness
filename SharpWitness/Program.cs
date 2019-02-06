@@ -54,17 +54,6 @@ namespace SharpWitness
                             }
                         }
 
-                        //string test = "phpmyadmin";
-                        //string test2 = "phpMyAdmin 2.11.11.3 - 27.0.34.156";
-
-                        //Console.WriteLine(test2.ToLower().Contains(test));
-
-                        //if (hashtable.Contains(htmlTitle.ToLower()))
-                        //{
-                        //    string creds = HTML.GetDefaultCreds(hashtable[htmlTitle.ToLower()].ToString());
-                        //    html += creds;
-                        //}
-
                         string b64image = HTML.GetImg(b64);
                         html += b64image;
 
