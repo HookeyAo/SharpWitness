@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultCreds.cs" />
     <Compile Include="File.cs" />
     <Compile Include="HTML.cs" />
     <Compile Include="HTTP.cs" />

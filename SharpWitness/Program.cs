@@ -1,6 +1,7 @@
 ﻿using System;
 using CommandLine;
 using System.Drawing;
+using System.Collections;
 
 namespace SharpWitness
 {
@@ -26,13 +27,32 @@ namespace SharpWitness
                     string htmlHeader = HTML.GetHeader();
                     File.Write(o.Outfile, htmlHeader);
 
+                    Hashtable hashtable = DefaultCreds.GetHashTable();
+
                 foreach (string url in urls)
                 {
                         string htmlContent = HTTP.GetContent(url);
                         string htmlTitle = HTTP.GetTitle(htmlContent);
+
+                        string html;
+
                         Image image = Screenshot.Capture(url);
                         string b64 = Convert.ToBase64String(ImageConverter.ToByteArray(image));
-                        string html = HTML.Generate(url, htmlTitle, b64);
+
+                        string title = HTML.GetTitle(htmlTitle);
+                        string address = HTML.GetAddress(url);
+
+                        html = title + address;
+
+                        if (hashtable.ContainsKey(htmlTitle.ToLower()))
+                        {
+                            string creds = HTML.GetDefaultCreds(hashtable[htmlTitle.ToLower()].ToString());
+                            html += creds;
+                        }
+
+                        string b64image = HTML.GetImg(b64);
+                        html += b64image;
+
                         File.Write(o.Outfile, html);
                 }
 

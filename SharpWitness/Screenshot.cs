@@ -7,7 +7,7 @@ namespace SharpWitness
     {
         public static Image Capture(string url)
         {
-            var device = Devices.TabletLandscape;
+            var device = Devices.PhoneLandscape;
             return Alx.Web.Screenshot.Take(url, device);
         }
     }
